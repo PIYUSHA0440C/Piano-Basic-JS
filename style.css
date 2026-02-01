@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+main footer {
+  color: white;
+}
+
+#piano {
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #bdbdbd;
+}
+#piano .title {
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(in oklab to right, rgb(187, 0, 255), rgb(255, 94, 0));
+  color: white;
+  z-index: 10;
+  padding: clamp(0.3rem, 3vw, 3rem);
+}
+#piano .title h1 {
+  font-size: clamp(0.3rem, 3vw, 3rem);
+  text-align: center;
+  color: white;
+}
+#piano .white {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 50vw;
+  width: 10vw;
+  max-height: 35rem;
+  max-width: 6rem;
+  background-color: white;
+  border: 2px solid #bdbdbd;
+  border-radius: 10px;
+  position: static;
+  z-index: 0;
+  cursor: pointer;
+}
+#piano .white p {
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+#piano .white:active {
+  scale: 0.96;
+  background-color: #efefef;
+}
+#piano .black {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 8vw;
+  height: 32vw;
+  max-width: 4.5rem;
+  max-height: 25rem;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  scale: 1;
+  cursor: pointer;
+}
+#piano .black p {
+  font-size: clamp(0.7rem, 2vw, 1.5rem);
+  margin-bottom: 0.5rem;
+}
+#piano .black:active {
+  top: 0;
+  scale: 0.96;
+}
+
+@media (max-width: 500px) {
+  main {
+    transform: rotate(90deg);
+  }
+}/*# sourceMappingURL=style.css.map */

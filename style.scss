@@ -1,0 +1,150 @@
+@mixin note-align(){
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@mixin flex-column($gap: 0rem){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,body {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background-color: black;
+}
+
+main{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  @include flex-column(1rem);
+
+  
+  footer{
+    color: white;
+  }
+}
+
+#piano{
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #bdbdbd;
+  
+  .title{
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(in oklab to right, rgb(187, 0, 255), rgb(255, 94, 0));
+    color: white;
+    z-index: 10;
+    padding: clamp(0.3rem, 3vw, 3rem);
+    
+    h1{
+      font-size: clamp(0.3rem, 3vw, 3rem);
+      text-align: center;
+      color: white;
+      
+    }
+  }
+
+  .white{
+    @include note-align();
+    height: 50vw;
+    width: 10vw;
+    max-height: 35rem;
+    max-width: 6rem;
+    background-color: white;
+    border: 2px solid #bdbdbd;
+    border-radius: 10px;
+    position: static;
+    z-index: 0;
+    cursor: pointer;
+
+    p{
+      font-size: clamp(0.8rem, 2vw, 1.5rem);
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .white:active{
+    scale: 0.96;
+    background-color: #efefef;
+  }
+
+  .black{
+    @include note-align();
+    width: 8vw;
+    height: 32vw;
+    max-width: 4.5rem;
+    max-height: 25rem;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    z-index: 1;
+    scale: 1;
+    cursor: pointer;
+
+    
+    p{
+      font-size: clamp(0.7rem, 2vw, 1.5rem);
+      margin-bottom: 0.5rem;
+    }
+
+    // .black-start,.black-end{
+    //   display: flex;
+    //   gap: 1.5rem;
+  
+    //   .black{
+    //     @include note-align();
+    //     width: 2.5rem;
+    //     height: 13rem;
+    //     border-radius: 10px;
+    //     background-color: black;
+    //     color: white;
+
+    //   }
+
+    //   .black:active{
+    //     top: 0;
+    //     scale: 0.96;
+    //   }
+    // }
+
+    // .black-start{
+    //   margin-left: 2.8rem;
+    // }
+
+    // .black-end{
+    //   margin-right: 2.8rem;
+    // }
+  }
+  
+  .black:active{
+    top: 0;
+    scale: 0.96;
+  }
+}
+
+@media (max-width: 500px) {
+  main{
+    transform: rotate(90deg);
+  }
+}
