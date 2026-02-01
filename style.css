@@ -56,7 +56,7 @@ main {
   font-weight: 300;
 }
 #piano .title p {
-  font-size: clamp(0.5rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 300;
 }
 #piano .white {
@@ -108,8 +108,16 @@ main {
   scale: 0.96;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   #piano {
     transform: rotate(90deg);
+  }
+  #piano .white {
+    height: 90vw;
+    width: 20vw;
+  }
+  #piano .black {
+    height: 60vw;
+    width: 15vw;
   }
 }/*# sourceMappingURL=style.css.map */
