@@ -1,3 +1,8 @@
+@font-face {
+  font-family: piano;
+  src: url(./fonts/Thunky\ DEMO.otf);
+}
+
 @mixin note-align(){
   display: flex;
   align-items: flex-end;
@@ -16,7 +21,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,body {
@@ -35,9 +39,7 @@ main{
   @include flex-column(1rem);
 
   
-  footer{
-    color: white;
-  }
+  
 }
 
 #piano{
@@ -46,6 +48,7 @@ main{
   border-radius: 10px;
   overflow: hidden;
   background-color: #bdbdbd;
+  font-family: Arial, Helvetica, sans-serif;
   
   .title{
     width: 100%;
@@ -53,13 +56,19 @@ main{
     background: linear-gradient(in oklab to right, rgb(187, 0, 255), rgb(255, 94, 0));
     color: white;
     z-index: 10;
-    padding: clamp(0.3rem, 3vw, 3rem);
+    padding: clamp(0.3rem, 1vw, 2rem);
+    @include flex-column();
+    font-family: piano;
     
     h1{
-      font-size: clamp(0.3rem, 3vw, 3rem);
-      text-align: center;
+      font-size: clamp(0.3rem, 10vw, 5rem);
       color: white;
-      
+      font-weight: 300
+    }
+    p{
+      font-size: clamp(0.5rem, 2vw, 1.5rem);
+      font-weight: 300;
+    
     }
   }
 
@@ -144,7 +153,7 @@ main{
 }
 
 @media (max-width: 500px) {
-  main{
+  #piano{
     transform: rotate(90deg);
   }
 }
